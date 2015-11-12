@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		222C12B01BF3D93700B75756 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C12AF1BF3D93700B75756 /* main.swift */; };
+		222C12B71BF3D95800B75756 /* RentalCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C12B61BF3D95800B75756 /* RentalCar.swift */; };
+		222C12B91BF3DA4000B75756 /* CarSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C12B81BF3DA4000B75756 /* CarSelector.swift */; };
+		226371041BF505570066A633 /* PriceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226371031BF505570066A633 /* PriceCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		222C12AC1BF3D93700B75756 /* FactoryMethod */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FactoryMethod; sourceTree = BUILT_PRODUCTS_DIR; };
 		222C12AF1BF3D93700B75756 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		222C12B61BF3D95800B75756 /* RentalCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalCar.swift; sourceTree = "<group>"; };
+		222C12B81BF3DA4000B75756 /* CarSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarSelector.swift; sourceTree = "<group>"; };
+		226371031BF505570066A633 /* PriceCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				222C12AF1BF3D93700B75756 /* main.swift */,
+				222C12B61BF3D95800B75756 /* RentalCar.swift */,
+				222C12B81BF3DA4000B75756 /* CarSelector.swift */,
+				226371031BF505570066A633 /* PriceCalculator.swift */,
 			);
 			path = FactoryMethod;
 			sourceTree = "<group>";
@@ -118,7 +127,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222C12B71BF3D95800B75756 /* RentalCar.swift in Sources */,
+				226371041BF505570066A633 /* PriceCalculator.swift in Sources */,
 				222C12B01BF3D93700B75756 /* main.swift in Sources */,
+				222C12B91BF3DA4000B75756 /* CarSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +248,7 @@
 				222C12B51BF3D93700B75756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
