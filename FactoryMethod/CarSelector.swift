@@ -28,7 +28,7 @@ import Foundation
 class CarSelector {
     class func selectCar (passengers: Int) -> String? {
         
-        return createRentalCar(passengers)?.name
+        return RentalCar.createRentalCar(passengers)?.name
     
     }
 }

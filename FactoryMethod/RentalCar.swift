@@ -8,55 +8,97 @@
 
 
 // implementing Factory method as a global function (available throughout application)
-// 
+//
 
-func createRentalCar(passengers: Int) -> RentalCar? {
-    var car: RentalCar?
+//func createRentalCar(passengers: Int) -> RentalCar? {
+//    var car: RentalCar?
+//    
+//    switch (passengers) {
+//    case 0...1:
+//        car = Sports()
+//    case 2...3:
+//        car = Compact()
+//    case 4...8:
+//        car = SUV()
+//    case 9...14:
+//        car = Minivan()
+//    default:
+//        car = nil
+//    }
+//    
+//    return car
+//}
+
+
+//protocol RentalCar {
+//    var name: String { get }
+//    var passengers: Int { get }
+//    var pricePerDay: Float { get }
+//    
+//}
+
+
+
+// Use class to capture the implementation contract that the protocol imposed on its implementations
+// so define final computed properties that expose the name, number of passengers and the price
+// and have defined backing properties that are set by a private constructor
+
+// Subclasses have to invoke the RentalCar initializer, which requires values for backing values
+// that are used by the computed properites, creating an effect that is similar to using a protocol
+
+
+class RentalCar {
     
-    switch (passengers) {
-    case 0...1:
-        car = Sports()
-    case 2...3:
-        car = Compact()
-    case 4...8:
-        car = SUV()
-    case 9...14:
-        car = Minivan()
-    default:
-        car = nil
+    private var nameBV: String
+    private var passengersBV: Int
+    private var priceBV: Float
+    
+    private init(name: String, passengers: Int, price: Float) {
+        self.nameBV = name
+        self.passengersBV = passengers
+        self.priceBV = price
     }
     
-    return car
-}
-
-
-protocol RentalCar {
-    var name: String { get }
-    var passengers: Int { get }
-    var pricePerDay: Float { get }
+    final var name: String {
+        get { return nameBV }
+    }
     
+    final var passengers: Int {
+        get { return passengersBV }
+    }
+    
+    final var pricePerDay: Float {
+        get { return priceBV }
+    }
+
+    class func createRentalCar(passengers: Int) -> RentalCar? {
+        
+        var car:RentalCar?
+        
+        switch (passengers) {
+        case 0...3:
+            car = Compact()
+        case 4...8:
+            car = SUV()
+        default:
+            car = nil
+        }
+        
+        return car
+    }
 }
 
 class Compact: RentalCar {
-    var name = "VW Golf"
-    var passengers = 3
-    var pricePerDay: Float = 20
-}
-
-class Sports: RentalCar {
-    var name = "Porsche Boxter"
-    var passengers = 1
-    var pricePerDay: Float = 100
+    private init() {
+        super.init(name: "VWGolf", passengers: 3, price: 20)
+    }
 }
 
 class SUV: RentalCar {
-    var name = "Cadillac Escalade"
-    var passengers = 8
-    var pricePerDay: Float = 75
+    private init() {
+        super.init(name: "Cadillac Escalade", passengers: 8, price: 75)
+    }
 }
 
-class Minivan: RentalCar {
-    var name = "Chevrolet Express"
-    var passengers = 14
-    var pricePerDay: Float = 40
-}
+
+
